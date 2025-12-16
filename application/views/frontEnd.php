@@ -71,7 +71,7 @@ body {
     }
 }
 .blog-box {
-    padding: 50px;
+    padding: 22px 67px 11px 0px;
 }
 
 .blog-img {
@@ -206,7 +206,7 @@ body {
     <h2 class="mb-4">Blogs</h2>
     <hr>
 
-    <div class="row g-4">
+    <div class="row">
 
         <?php foreach ($posts as $post): ?>
             
@@ -262,7 +262,7 @@ $(document).ready(function () {
       $(this).hide();
     }
   });
-  
+
 
 });
 

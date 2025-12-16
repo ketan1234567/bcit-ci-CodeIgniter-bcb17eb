@@ -1,0 +1,2236 @@
+Commonly used PHP 5 String Functions
+
+1)strlen($str):-This function returns the length of the string
+ or the number of characters in the string including whitespaces.
+
+Exmple:
+
+<?php
+
+$str = "Welcome to Studytonight";
+
+// using strlen in echo method
+echo "Length of the string is: ". strlen($str);
+
+?>
+
+Output:-Length of the string is: 23
+
+2)strrev($str):This function is used to reverse a string.
+
+Exmple:
+
+<?php
+
+$str = "Welcome to Studytonight";
+
+// using strrev in echo method
+echo "Reverse: ". strrev($str);
+
+?>
+
+
+Output:-Reverse: thginotydutS ot emocleW
+
+
+3)str_replace($replacethis, $replacewith, $str):-This function is used to 
+replace a part of the string with some text. 
+While using this function, the first argument is the part of string that you want to replace, 
+second argument is the new text you want to include, and the last argument is the string variable itself.
+
+Exmple:
+
+<?php
+
+$str = str_replace("Studytonight", "Studytonight.com", "Welcome to Studytonight");
+
+echo $str;
+
+?>
+
+Output:-Welcome to Studytonight.com
+
+
+4)str_repeat($str, $counter):-This function is used to repeat a string a given number of times.
+ The first argument is the string and the second argument is the number of times the string should be repeated.
+
+Exmple:
+
+<?php
+
+$str = "Studytonight";
+
+echo str_repeat($str, 4);
+
+?>
+
+Output:-StudytonightStudytonightStudytonightStudytonight
+
+5)explode(separator, $str, $limit):
+
+This function is used to break a string, create an array of the broken parts of the string 
+and return the array.
+ The first argument, separator defines where to break the string from.
+ It can be a space, hiphen(-) or any other character.
+
+The second argument of this function is the string itself and the third argument is the limit, which specifies the number of array elements to return. 
+the third argument is optional.
+
+Let's have an example,
+
+<?php
+
+$str = "Its a beautiful day";
+    
+// we can directly print the result of explode
+print_r(explode(" ", $str));
+
+?>
+
+Output:-
+(
+    [0] => Its 
+    [1] => a 
+    [2] => beautiful 
+    [3] => day 
+)
+
+In the example above, we have provided space as separator to break the string and return an array.
+
+If we provide the third argument limit as well, we can limit the number of array elements returned. For example, if we provide 2 as the third argument, then we will only get 2 elements in the array, the first two.
+
+6)implode(separator, $arr):-This function is used to form a string using the array elements from the array provided and join them using the separator.
+
+Let's take an example,
+
+<?php
+
+$arr = array("Its", "a", "beautiful", "day");
+
+// <br> is used to jump to next line
+echo implode(" ", $arr) . "<br>";
+echo implode("-", $arr) . "<br>";
+echo implode("/", $arr) . "<br>";
+
+?>
+
+Output:-
+Its a beautiful day
+Its-a-beautiful-day
+Its/a/beautiful/day
+__________________________________________________________________________________END_________________________
+
+PHP Array Functions
+
+Here’s a complete list of PHP array functions. We know there are a lot, so check out 
+the quick links and table of contents above if you’re looking for a specific one.
+
+1. array():-The array() function is used to create an array.
+
+Example:
+
+<?php
+
+$fruits = array("apple", "banana", "cherry");
+
+echo "Fruits: ";
+
+foreach ($fruits as $fruit) {
+
+echo $fruit . " ";
+
+}
+
+?>
+
+Output:
+
+Fruits: apple banana cherry
+_____________________________________________________________________________
+2)array_combine():-The array_combine() function creates a new array by
+ combining two arrays where one array provides keys and the other provides values.
+
+<?php
+
+$keys = array("a", "b", "c");
+
+$values = array(1, 2, 3);
+
+$combined = array_combine($keys, $values);
+
+echo "Combined Array: ";
+
+foreach ($combined as $key => $value) {
+
+echo "[$key => $value] ";
+
+}
+
+?>
+
+Output:
+
+Combined Array: [a => 1] [b => 2] [c => 3]
+___________________________________________________________________________________________________________
+
+3)array_diff():-calculates the difference between two or more arrays and returns 
+an array containing the values that are present in the first array but not in the other arrays.
+
+Example:
+
+<?php
+
+$arr1 = array("a", "b", "c");
+
+$arr2 = array("b", "c", "d");
+
+$difference = array_diff($arr1, $arr2);
+
+echo "Array Difference: ";
+
+foreach ($difference as $item) {
+
+echo $item . " ";
+
+}
+
+?>
+
+Output:
+
+Array Difference: a
+______________________________________________________________________________________________________________
+4)in_array():-The in_array() function checks if a specified value exists in an array. 
+It returns true if the value is found, and false if otherwise.
+
+Example:
+
+<?php
+
+$fruits = array("apple", "banana", "cherry");
+
+$result = in_array("banana", $fruits);
+
+echo "Value 'banana' Exists: " . ($result ? "Yes" : "No");
+
+?>
+
+Output:
+
+Value 'banana' Exists: Yes
+______________________________________________________________________________________________________________
+5)array_merge():-The array_merge() function merges two or more arrays into a single array.
+Example:
+
+<?php
+
+$arr1 = array("a", "b");
+
+$arr2 = array("c", "d");
+
+$merged = array_merge($arr1, $arr2);
+
+echo "Merged Array: ";
+
+foreach ($merged as $item) {
+
+echo $item . " ";
+
+}
+
+?>
+
+Output:
+
+Merged Array: a b c d
+______________________________________________________________________________________________________________
+6)array_unique():-array_unique() removes duplicate values from an array and returns a new array with only the unique values.
+
+Example:
+
+<?php
+
+$numbers = array(1, 2, 3, 2, 4, 5, 5);
+
+$uniqueNumbers = array_unique($numbers);;
+
+echo "Unique Numbers: ";
+
+foreach ($uniqueNumbers as $number) {
+
+echo $number . " ";
+
+}
+
+?>
+
+Output:
+
+Unique Numbers: 1 2 3 4 5
+______________________________________________________________________________________________________________
+
+*)what is Dynamic Typing in PHP and Static Typing in PHP  simple in english language ?
+
+*)Dynamic Typing in PHP (Simple Explanation):
+
+1)In PHP, you don’t have to tell the computer what kind of data (like numbers or words) 
+a variable will hold. The computer automatically figures it out
+ while the program is running.
+
+For example, 
+
+you can use the same variable to hold a number, then later use it to hold a word
+
+$var = 10;        // $var is a number
+$var = "hello";   // Now $var is a word (string)
+
+
+imp:-PHP decides the type of data at the time of running the program, which is
+ called dynamic typing.
+
+*)Static Typing in PHP (Simple Explanation):
+
+1)With static typing, you tell PHP what type of data a variable must hold before the program runs.
+
+2)PHP allows you to use this in functions by specifying the types for inputs and outputs. If the wrong type is used, PHP will show an error.
+
+Exmple:
+
+function addNumbers(int $a, int $b): int {
+    return $a + $b;
+}
+
+echo addNumbers(5, 10);  // This works because both $a and $b are numbers
+echo addNumbers(5, "10"); // Error! "10" is a word, not a number
+
+imp:-Static typing makes the code more predictable because you know what types the variables will always hold.
+
+imp:
+
+1)Dynamic typing: PHP figures out the type of data while it runs.
+
+2)Static typing: You tell PHP what type of data to expect, making it stricter.
+
+______________________________________________________________________________________________________________
+3)What is PEAR in PHP?
+
+PEAR is a framework and repository for reusable PHP components. 
+PEAR stands for PHP Extension and Application Repository. 
+It contains all types of PHP code snippets and libraries.
+It also provides a command line interface to install “packages” automatically.
+______________________________________________________________________________________________________________
+4) Primary Key:
+
+Unique Identifier: A primary key is a unique identifier for each record (row) in a table.
+
+Uniqueness: No two rows can have the same primary key value.
+
+Non-nullable: It cannot be null; every row must have a value for the primary key.
+
+
+
+CREATE TABLE Users (
+    user_id INT PRIMARY KEY,
+    username VARCHAR(50)
+);
+
+
+Foreign Key:
+
+Relationship: A foreign key is a field (or a set of fields) in one table that uniquely identifies a row of another table.
+
+Referential Integrity: It establishes a link between the data in two tables.
+
+Constraints: It ensures that the value in the foreign key field must match a value in the primary key of the related table.
+
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
+In this Orders table, user_id is a foreign key. It links each order to a user in the Users table. The user_id in the Orders table must match an existing user_id in the Users table, ensuring that every order is associated with a valid user.
+____________________________________________________________________________________________________
+Q5. Is PHP a case sensitive language?
+
+PHP is partially case sensitive. The variable names are case-sensitive but function names are not.
+ If you define the function name in lowercase and call them in uppercase, 
+it will still work. User-defined functions are not case sensitive but the rest of the language is case-sensitive.
+______________________________________________________________________________________________________________
+Q6. 
+______________________________________________________________________________________________________________
+Q8. What are the different types of PHP variables?
+
+here are 8 data types in PHP which are used to construct the variables:
+
+Integers − are whole numbers, without a decimal point, like 4195.
+Doubles − are floating-point numbers, like 3.14159 or 49.1.
+Booleans − have only two possible values either true or false.
+NULL − is a special type that only has one value: NULL.
+Strings − are sequences of characters, like ‘PHP supports string operations.’
+Arrays − are named and indexed collections of other values.
+Objects − are instances of programmer-defined classes, which can package up both other kinds of values and functions that are specific to the class.
+Resources − are special variables that hold references to resources external to PHP.
+____________________________________________________________________________________________________________
+
+Q9. What are the rules for naming a PHP variable?
+
+The following rules are needed to be followed while  naming a PHP variable:
+
+Variable names must begin with a letter or underscore character.
+A variable name can consist of numbers, letters, underscores but you cannot use characters like + , – , % , ( , ) . & , etc.
+______________________________________________________________________________________________________________Q10. What is NULL?
+
+NULL is a special data type which can have only one value. A variable of data type NULL is
+ a variable that has no value assigned to it. It can be assigned as follows:
+
+$var = NULL;
+The special constant NULL is capitalized by convention but actually it is case insensitive. So,you can also write it as :
+
+
+$var = null;
+A variable that has been assigned the NULL value, consists of the following properties:
+
+It evaluates to FALSE in a Boolean context.
+It returns FALSE when tested with IsSet() function.
+______________________________________________________________________________________________________________
+Q13. What is the purpose of constant() function?
+
+The constant() function will return the value of the constant. This is useful when you want to retrieve value of a constant, but you do not know its name, i.e.,
+ it is stored in a variable or returned by a function. For example –
+
+
+
+<?php define("MINSIZE", 50); echo MINSIZE; echo constant("MINSIZE"); // same thing as the previous line ?>
+_____________________________________________________________________________________________________________
+Q18. What is the difference between PHP4 and PHP5?
+
+PHP4
+
+Constructor have same name as the Class name.
+Everything is passed by value.
+PHP4  does not declare a class as abstract
+PHP4  does not declare a class as abstract
+
+
+PHP5
+
+Constructors are named as _construct and Destructors as _destruct().
+All objects are passed by references.
+PHP5 allows to declare a class as abstract
+It allows to have static Methods and Properties in a class
+______________________________________________________________________________________________________________
+
+Q19.  What is the meaning of a final class and a final method?
+
+The final keyword in a method declaration indicates that the method cannot be overridden by subclasses. 
+A class that is declared final cannot be subclassed. This is particularly useful when we are creating an 
+immutable class like the String class.Properties cannot be declared final, only classes and methods may be declared as final.
+
+______________________________________________________________________________________________________________
+Q20.  How can you compare objects in PHP?
+
+We use the operator ‘==’ to test if two objects are instanced from the same class and have same attributes and equal values. We can also test if two objects are referring to the same instance of the same class by the use of the identity operator ‘===’.
+______________________________________________________________________________________________________________
+Q24. What are the data types in PHP?
+
+PHP support 9 primitive data types:
+
+Scalar Types	
+
+Integer
+Boolean
+Float
+String
+
+Compound Types	
+
+Array
+Object
+Callable
+
+Special Types
+
+Resource
+Null
+______________________________________________________________________________________________________________________________________________
+
+Q25. PHP Callback Functions
+
+Callback Functions
+A callback function (often referred to as just "callback") is a function which is passed as an argument into another function.
+
+Any existing function can be used as a callback function. To use a function as a callback function, pass a string containing the name of the function as the argument of another function:
+
+Pass a callback to PHP's array_map() function to calculate the length of every string in an array:
+
+<?php
+function my_callback($item) {
+  return strlen($item);
+}
+
+
+
+$strings = ["apple", "orange", "banana", "coconut"];
+$lengths = array_map("my_callback", $strings);
+print_r($lengths);
+?>
+output:
+Array ( [0] => 5 [1] => 6 [2] => 6 [3] => 7 )
+_____________________________________________________________________________________________________________
+
+Starting with version 7, PHP can pass anonymous functions as callback functions:
+
+<?php
+$strings = ["apple", "orange", "banana", "coconut"];
+$lengths = array_map( function($item) { return strlen($item); } , $strings);
+print_r($lengths);
+?>
+
+output
+Array ( [0] => 5 [1] => 6 [2] => 6 [3] => 7 )
+______________________________________________________________________________________________________________
+Callbacks in User Defined Functions
+
+User-defined functions and methods can also take callback functions as arguments. To use callback functions inside a user-defined function or method,
+ call it by adding parentheses to the variable and pass arguments as with normal functions
+
+<?php
+function exclaim($str) 
+
+
+{
+  return $str . "! ";
+}
+
+function ask($str) {
+  return $str . "? ";
+}
+
+function printFormatted($str, $format) {
+  // Calling the $format callback function
+  echo $format($str);
+}
+
+// Pass "exclaim" and "ask" as callback functions to printFormatted()
+printFormatted("Hello world", "exclaim");
+printFormatted("Hello world", "ask");
+?>
+______________________________________________________________________________________________________________
+
+PHP Arrow Functions
+
+Arrow functions, also known as “short closures”, is a new feature introduced in PHP 7.4 that provides a more concise syntax for defining anonymous functions. 
+Arrow functions allow you to define a function in a single line of code, making your code more readable and easier to maintain
+
+<?php 
+   
+// Declare an array 
+$arr = [1, 2, 3, 4, 5, 6, 7]; 
+  
+$sum = array_reduce($arr, fn($carry, $item) => $carry + $item); 
+  
+echo $sum; 
+?>
+
+
+
+______________________________________________________________________________________________________________
+PHP OOP
+
+PHP - The $this Keyword
+
+The $this keyword refers to the current object, and is only available inside methods.
+
+<?php
+class Fruit {
+  // Properties
+  public $name;
+  public $color;
+
+  // Methods
+  function set_name($name) {
+    $this->name = $name;
+  }
+  function get_name() {
+    return $this->name;
+  }
+  function set_color($color) {
+    $this->color = $color;
+  }
+  function get_color() {
+    return $this->color;
+  }
+}
+
+$apple = new Fruit();
+$apple->set_name('Apple');
+$apple->set_color('Red');
+echo "Name: " . $apple->get_name();
+echo "<br>";
+echo "Color: " .  $apple->get_color();
+?>
+________________________________________________________________________________________________________________________________________________________________
+
+PHP - The __construct Function
+
+A constructor allows you to initialize an object's properties upon creation of the object.
+
+If you create a __construct() function, PHP will automatically call this function when you create an object from a class.
+
+Notice that the construct function starts with two underscores (__)!
+
+We see in the example below, that using a constructor saves us from calling the set_name() method which reduces the amount of code:
+
+
+
+<?php
+class Fruit {
+  public $name;
+  public $color;
+
+  function __construct($name) {
+    $this->name = $name; 
+  }
+
+  function get_name() {
+    return $this->name;
+  }
+
+}
+
+$apple = new Fruit("Apple");
+echo $apple->get_name();
+?>
+______________________________________________________________________________________________________________
+
+PHP - The __destruct Function
+
+A destructor is called when the object is destructed or the script is stopped or exited.
+
+If you create a __destruct() function, PHP will automatically call this function at the end of the script.
+
+Notice that the destruct function starts with two underscores (__)!
+
+The example below has a __construct() function that is automatically called when you create an object from a class, and a __destruct() function that is automatically called at the end of the script:
+
+<?php
+class Fruit {
+  public $name;
+  public $color;
+
+  function __construct($name) {
+    $this->name = $name; 
+  }
+  function __destruct() {
+    echo "The fruit is {$this->name}."; 
+  }
+}
+
+$apple = new Fruit("Apple");
+?>
+
+52579-Today-Digital-Replicant-UK-2
+________________________________________________________________________________________________________________________________________________
+
+
+PHP - What is Inheritance?
+
+Inheritance in OOP = When a class derives from another class.
+
+The child class will inherit all the public and protected properties and methods from the parent class. In addition, it can have its own properties and methods.
+
+An inherited class is defined by using the extends keyword.
+
+Let's look at an example:
+
+
+<?php
+class Fruit {
+  public $name;
+  public $color;
+  public function __construct($name, $color) {
+    $this->name = $name;
+    $this->color = $color; 
+  }
+  public function intro() {
+    echo "The fruit is {$this->name} and the color is {$this->color}."; 
+  }
+}
+
+// Strawberry is inherited from Fruit
+class Strawberry extends Fruit {
+  public function message() {
+    echo "Am I a fruit or a berry? "; 
+  }
+}
+
+$strawberry = new Strawberry("Strawberry", "red");
+$strawberry->message();
+$strawberry->intro();
+?>
+ 
+</body>
+</html>
+
+Example Explained
+The Strawberry class is inherited from the Fruit class.
+
+This means that the Strawberry class can use the public $name and $color properties as well as the public __construct() and intro() methods from the Fruit class because of inheritance.
+
+The Strawberry class also has its own method: message().
+_______________________________________________________________________________________________________END____
+
+PHP - What are Interfaces?
+
+Interfaces allow you to specify what methods a class should implement.
+
+Interfaces make it easy to use a variety of different classes in the same way. When one or more classes use the same interface, it is referred to as "polymorphism".
+
+Interfaces are declared with the interface keyword:
+
+PHP - Interfaces vs. Abstract Classes
+Interface are similar to abstract classes. The difference between interfaces and abstract classes are:
+
+Interfaces cannot have properties, while abstract classes can
+All interface methods must be public, while abstract class methods is public or protected
+All methods in an interface are abstract, so they cannot be implemented in code and the abstract keyword is not necessary
+Classes can implement an interface while inheriting from another class at the same time
+PHP - Using Interfaces
+To implement an interface, a class must use the implements keyword.
+
+A class that implements an interface must implement all of the interface's methods.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+interface Animal {
+  public function makeSound();
+}
+
+class Cat implements Animal {
+  public function makeSound() {
+    echo "Meow";
+  }
+}
+
+$animal = new Cat();
+$animal->makeSound();
+?>
+ 
+</body>
+</html>
+
+Output:
+Meow
+
+<?php
+// Interface definition
+interface Animal {
+  public function makeSound();
+}
+
+// Class definitions
+class Cat implements Animal {
+  public function makeSound() {
+    echo " Meow ";
+  }
+}
+
+class Dog implements Animal {
+  public function makeSound() {
+    echo " Bark ";
+  }
+}
+
+class Mouse implements Animal {
+  public function makeSound() {
+    echo " Squeak ";
+  }
+}
+
+// Create a list of animals
+$cat = new Cat();
+$dog = new Dog();
+$mouse = new Mouse();
+$animals = array($cat, $dog, $mouse);
+
+// Tell the animals to make a sound
+foreach($animals as $animal) {
+  $animal->makeSound();
+}
+?>
+______________________________________________________________________________________________________________
+PHP - Static Methods
+
+Static methods can be called directly - without creating an instance of the class first.
+
+Static methods are declared with the static keyword:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+class greeting {
+  public static function welcome() {
+    echo "Hello World!";
+  }
+}
+
+// Call static method
+greeting::welcome();
+?>
+ 
+</body>
+</html>
+
+A class can have both static and non-static methods.
+ A static method can be accessed from a method in the same class using the self keyword and double colon (::):
+
+<?php
+class greeting {
+  public static function welcome() {
+    echo "Hello World!";
+  }
+  public function __construct() {
+    self::welcome();
+  }
+}
+
+new greeting();
+?>
+
+<?php
+class domain {
+  protected static function getWebsiteName() {
+    return "W3Schools.com";
+  }
+}
+
+class domainW3 extends domain {
+  public $websiteName;
+  public function __construct() {
+    $this -> websiteName = parent::getWebsiteName();
+  }	
+}
+
+$domainW3 = new domainW3;
+echo $domainW3 -> websiteName;
+?>
+______________________________________________________________________________________________________________
+Q28. What are different types of errors available in Php ?
+
+The different types of error in PHP are:
+
+E_ERROR– A fatal error that causes script termination.
+E_WARNING– Run-time warning that does not cause script termination.
+E_PARSE– Compile time parse error.
+E_NOTICE– Run time notice caused due to error in code.
+E_CORE_ERROR– Fatal errors that occur during PHP initial startup.
+E_CORE_WARNING– Warnings that occur during PHP initial startup.
+E_COMPILE_ERROR– Fatal compile-time errors indication problem with script.
+E_USER_ERROR– User-generated error message.
+E_USER_WARNING– User-generated warning message.
+E_USER_NOTICE- User-generated notice message.
+E_STRICT– Run-time notices.
+E_RECOVERABLE_ERROR– Catchable fatal error indicating a dangerous error
+E_ALL– Catches all errors and warnings.
+______________________________________________________________________________________________________________
+
+03-01-2024
+
+Q29. Explain the syntax for ‘foreach’ loop with example.
+The foreach statement is used to loop through arrays. 
+For each pass the value of the current array element is assigned to $value and the array pointer 
+is moved by one and in the next pass next element will be processed.
+
+Syntax-
+
+foreach (array as value)
+{
+code to be executed;
+}
+
+<?php
+$colors = array("blue", "white", "black");
+ 
+foreach ($colors as $value) {
+echo "$value 
+";
+}
+?>
+______________________________________________________________________________________________________________
+Q30. What are the different types of Array in PHP?
+There are 3 types of Arrays in PHP:
+
+Indexed Array – An array with a numeric index is known as the indexed array. Values are stored and accessed in linear fashion.
+Associative Array – An array with strings as index is known as the associative array. This stores element values in association with key values
+ rather than in a strict linear index order.
+
+Multidimensional Array – An array containing one or more arrays is known as multidimensional array. The values are accessed using multiple indices.
+______________________________________________________________________________________________________________
+Q32. How to concatenate two strings in PHP?
+To concatenate two string variables together, we use the dot (.) operator.
+
+<?php $string1="Hello edureka"; $string2="123"; echo $string1 . " " . $string2; ?>
+______________________________________________________________________________________________________________
+Q34. What is the difference between “echo” and “print” in PHP?
+
+PHP echo output one or more string. It is a language construct not a function. 
+So use of parentheses is not required. But if you want to pass more than one parameter to echo, 
+use of parentheses is required. Whereas, PHP print output a string. It is a language construct not a function. 
+So use of parentheses is not required with the argument list. Unlike echo, it always returns 1.
+
+
+Echo can output one or more string but print can only output one string and always returns 1.
+Echo is faster than print because it does not return any value.
+______________________________________________________________________________________________________________
+Q38. What is overloading and overriding in PHP?
+
+
+PHP, overloading is implemented using magic methods. These magic methods are part of the class but are prefixed with 
+double underscores (e.g., __get, __set, __call). Here are the key magic methods for overloading:
+
+
+<?php
+
+class MyClass {
+    private $data = [];
+
+    public function __get($name) {
+        return $this->data[$name];
+    }
+
+    public function __set($name, $value) {
+        $this->data[$name] = $value;
+    }
+
+    public function __call($name, $arguments) {
+        echo "Call to method '$name' with arguments: " . implode(', ', $arguments);
+    }
+}
+
+$obj = new MyClass();
+$obj->someProperty = 'Hello'; // This will call __set
+echo $obj->someProperty;      // This will call __get
+$obj->someMethod('arg1', 'arg2'); // This will call __call
+
+
+?>
+
+
+
+
+Overloading is defining functions that have similar signatures, yet have different parameters.
+
+
+
+ Overriding is only pertinent to derived classes, where the parent class has defined a method and the derived class wishes to override that method.
+
+<?php 
+class ParentClass {
+public function greet(){
+    echo "Hello From parent Class";
+}
+}
+class childClass extends ParentClass {
+    public  function greet(){
+        echo "Hello From child class";
+
+}
+}
+$main=new childClass();
+$main->greet();
+
+?>
+
+ In PHP, you can only overload methods using the magic method __call.
+______________________________________________________________________________________________________________
+
+Q45.  What is a lambda function in PHP?
+
+A lambda function is an anonymous PHP function that can be stored in a variable and passed as an argument to other functions or methods. 
+A closure is a lambda function that is aware of its surrounding context. For example –
+
+$gretting=function(){
+ echo "This is lamba fn";
+};
+
+$input = array(1, 2, 3, 4, 5);
+$output = array_filter($input, function ($v) { return $v > 2; });
+function ($v) { return $v > 2; } is the lambda function definition. We can store it in a variable so that it can be reusable.
+______________________________________________________________________________________________________________
+Q50. What is the difference between runtime exception and compile time exception?
+
+An exception that occurs at compile time is called a checked exception.
+ This exception cannot be ignored and must be handled carefully. For example,
+ if you use FileReader class to read data from the file and the file specified in class constructor does not exist, then a
+ FileNotFoundException occurs and you will have to manage that exception.
+ For the purpose, you will have to write the code in a try-catch block and handle the exception. 
+On the other hand, an exception that occurs at runtime is called unchecked-exception.
+______________________________________________________________________________________________________________
+What is $$ in PHP?
+
+PHP $ and $$ Variables. The $var (single dollar) is a normal variable with the name var that stores any value like string, 
+integer, float, etc. 
+The $$var (double dollar) is a reference variable that stores the value of the $variable inside it.
+______________________________________________________________________________________________________________
+
+What’s the difference between abstract class and interface?
+
+The key difference between classes and interfaces is that a class can implement multiple interfaces, 
+but it can only inherit from a single class. This concept is known as multiple inheritance through 
+interfaces and enables greater flexibility and reusability in code, with traits beings one of the
+ possible solutions to the multiple inheritance problem.
+
+On the other hand, inheritance allows a class to inherit the properties and methods of a parent class,
+ promoting code reuse and organizing the code structure.
+______________________________________________________________________________________________________________
+
+23-01-2024
+
+What is a PHP Session?
+
+A session is a way to store information (in variables) to be used across multiple pages.
+
+Unlike a cookie, the information is not stored on the users computer.
+
+When you work with an application, you open it, do some changes, and then you close it. This is much like a Session. 
+The computer knows who you are. 
+It knows when you start the application and when you end.
+ But on the internet there is one problem: the web server does not know who you are or what you do, because the HTTP address doesn't maintain state.
+
+Session variables solve this problem by storing user information to be used across multiple pages (e.g. username, favorite color, etc).
+ By default, session variables last until the user closes the browser.
+
+So; Session variables hold information about one single user, and are available to all pages in one application
+
+Start a PHP Session
+A session is started with the session_start() function.
+
+Session variables are set with the PHP global variable: $_SESSION.
+
+Now, let's create a new page called "demo_session1.php". In this page, we start a new PHP session and set some session variables:
+
+Exmple:
+<?php
+// Start the session
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// Set session variables
+$_SESSION["favcolor"] = "green";
+
+echo $_SESSION["favcolor"];
+?>
+</body>
+</html>
+
+output:green
+______________________________________________________________________________________________________________
+What is a Cookie?
+
+A cookie is often used to identify a user.
+ A cookie is a small file that the server embeds on the user's computer. 
+ Each time the same computer requests a page with a browser, 
+ it will send the cookie too. With PHP, you can both create and retrieve cookie values.
+
+
+Create Cookies With PHP
+A cookie is created with the setcookie() function.
+
+Exmple:
+
+<?php
+$cookie_name = "user";
+$cookie_value = "John Doe";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+?>
+<html>
+<body>
+
+<?php
+if(!isset($_COOKIE[$cookie_name])) {
+  echo "Cookie named '" . $cookie_name . "' is not set!";
+} else {
+  echo "Cookie '" . $cookie_name . "' is set!<br>";
+  echo "Value is: " . $_COOKIE[$cookie_name];
+}
+?>
+
+</body>
+</html>
+______________________________________________________________________________________________________________
+24-01-2023
+
+12. How does inheritance work in PHP?
+
+When a class derives from another class in OOP, this is called inheritance.
+
+The child class will inherit all of the parent class's methods, both protected and public, and it can also have its methods and characteristics.
+
+Using the extends keyword defines an inherited class.
+
+Let's consider a situation:
+
+Exmple:
+<?php
+class Fruit {
+  public $name;
+  public $color;
+  public function __construct($name, $color) {
+    $this->name = $name;
+    $this->color = $color;
+  }
+  public function intro() {
+    echo "The fruit is {$this->name} and the color is {$this->color}.";
+  }
+}
+
+// Blueberry is inherited from Fruit
+class Blueberry extends Fruit {
+  public function message() {
+    echo "Am I a fruit or a berry? ";
+  }
+}
+$blueberry = new Blueberry("Blueberry", "blue");
+$blueberry->message();
+$blueberry->intro();
+?>
+______________________________________________________________________________________________________________
+13)What is JSON?
+
+JSON stands for JavaScript Object Notation, and is a syntax for storing and exchanging data.
+
+Since the JSON format is a text-based format, it can easily be sent to and from a server, and used 
+as a data format by any programming language.
+
+PHP has some built-in functions to handle JSON.
+
+First, we will look at the following two functions:
+
+json_encode()
+json_decode()
+
+Exmple:
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$age = array("Peter"=>35, "Ben"=>37, "Joe"=>43);
+
+echo json_encode($age);
+?>
+
+</body>
+</html>
+
+output:
+{"Peter":35,"Ben":37,"Joe":43}
+
+PHP - json_decode()
+The json_decode() function is used to decode a JSON object into a PHP object or an associative array.
+
+Exmple:
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$jsonobj = '{"Peter":35,"Ben":37,"Joe":43}';
+ 
+var_dump(json_decode($jsonobj));
+?>
+</body>
+</html>
+output:
+object(stdClass)#1 (3) { ["Peter"]=> int(35) ["Ben"]=> int(37) ["Joe"]=> int(43) }
+________________________________________________________________________________________start______________-
+JSON.stringify() is a method in JavaScript that converts a JavaScript object or value into a JSON string. 
+This method is useful when you need to send data from a web application to a server in a string format, 
+such as when making an API request, or when you want to store JavaScript objects as strings in a database or local storage.
+
+const obj = { name: "John", age: 30, city: "New York" };
+const jsonString = JSON.stringify(obj);
+console.log(jsonString);
+// Output: '{"name":"John","age":30,"city":"New York"}'
+
+
+JSON.parse() is a method in JavaScript that parses a JSON string and converts it into a JavaScript object. 
+This is the opposite of JSON.stringify(), which converts a JavaScript object into a JSON string.
+
+
+
+const jsonString = '{"name":"John","age":30,"city":"New York"}';
+const obj = JSON.parse(jsonString);
+console.log(obj);
+// Output: { name: 'John', age: 30, city: 'New York' }
+
+
+________________________________________________________________________________________END______________-
+______________________________________________________________________________________________________________
+17-06-2024
+
+14)What are the common uses of include, require, include_once, and require_once?
+
+include and require are used to include files. If the file is not found, include will produce a warning but continue execution, 
+while require will produce a fatal error and stop execution. include_once and require_once are similar but ensure that the file is included only once.
+
+15)Explain the difference between GET and POST methods?
+
+GET method appends data to the URL and has a size limit, whereas POST method sends data as part of the HTTP request body and has no size limit. 
+GET is less secure than POST because data is visible in the URL.
+
+16)How can you connect to a MySQL database in PHP?
+
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "database";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+
+
+17)What are prepared statements and why are they important?
+
+Prepared statements are used to execute the same SQL statements repeatedly with high efficiency and to prevent SQL injection attacks.
+
+
+18)What is the use of the __construct() method in PHP?
+
+__construct() is a magic method that is automatically called when an object of a class is instantiated. It is typically used for initializing class properties.
+
+
+19)How do you handle errors in PHP?
+
+PHP has several error-handling functions such as error_reporting(), set_error_handler(), and try-catch blocks for exceptions. 
+
+Example:
+
+try {
+    // Code that may throw an exception
+    throw new Exception("Error Processing Request", 1);
+} catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
+
+
+20)What is the difference between unlink() and unset()?
+
+1)unlink() is used to delete a file from the file system. 
+
+2)unset() is used to destroy a specified variable.
+
+
+21)How would you handle file uploads in PHP?
+
+Use the $_FILES superglobal to handle file uploads. 
+
+
+Example:
+
+if ($_FILES['uploaded_file']['error'] == UPLOAD_ERR_OK) {
+    $tmp_name = $_FILES['uploaded_file']['tmp_name'];
+    $name = basename($_FILES['uploaded_file']['name']);
+    move_uploaded_file($tmp_name, "uploads/$name");
+    echo "File successfully uploaded!";
+} else {
+    echo "File upload failed!";
+}
+
+23)Explain the concept of namespaces in PHP.?
+
+Namespaces in PHP are designed to avoid name collisions in large applications by encapsulating items like classes, functions, and constants in a single unique namespace. 
+
+Example:
+
+namespace MyProject;
+
+class MyClass {
+    // class code
+}
+
+$obj = new \MyProject\MyClass();
+
+24)What are traits in PHP?
+
+Traits are a mechanism for code reuse in single inheritance languages like PHP. 
+A trait is intended to reduce some limitations of single inheritance by enabling a developer to reuse sets of methods 
+freely in several independent classes living in different class hierarchies. 
+
+Example:
+
+
+trait MyTrait {
+    public function sayHello() {
+        echo "Hello!";
+    }
+}
+
+class MyClass {
+    use MyTrait;
+}
+
+$obj = new MyClass();
+$obj->sayHello(); // Outputs: Hello!
+
+
+25)How do you enable error reporting in PHP?
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+26)What are some common performance optimization techniques in PHP?
+
+Use caching mechanisms like OPCache, optimize database queries, minimize file I/O, use efficient algorithms and data structures, and avoid unnecessary computations.
+
+27)What tools or methods do you use for debugging PHP code?
+
+Tools like Xdebug, built-in PHP functions like var_dump(), print_r(), error_log(), and using IDEs with debugging support.
+
+Key Versions and Their Adoption
+
+PHP 8.0: Introduced in November 2020, PHP 8.0 brought major improvements like the JIT (Just-In-Time) compiler, union types, named arguments, and attributes for metadata.
+
+PHP 8.1: Released in November 2021, PHP 8.1 added features such as enums, readonly properties, and performance enhancements.
+
+PHP 8.2: Released in December 2022, PHP 8.2 continued the trend of introducing new features and deprecations to improve performance and security.
+
+Factors Influencing Adoption
+
+New Features: The enhancements and new features in PHP 8.x versions, such as improved performance, better type safety, and new syntax features, encourage developers to upgrade.
+
+Security: With older versions like PHP 7.4 reaching end of life, there are no security updates, which pushes organizations to adopt newer versions.
+
+Compatibility: Compatibility with frameworks and libraries also influences the adoption of newer PHP versions. Many popular frameworks like Laravel and Symfony support PHP 8.x, prompting developers to upgrade.
+
+Conclusion
+
+PHP 8.0 and newer versions are increasingly used in the market due to their performance improvements and new features. While some legacy systems may still be running PHP 7.x, the trend is moving towards PHP 8.x for both new projects and upgrades of existing applications.
+
+______________________________________________________________________________________________________
+
+1)PHP 8.0 Features
+
+1)Just-In-Time (JIT) Compiler:
+Introduces a significant performance improvement by compiling parts of the code at runtime.
+
+2)Union Types:
+Allows specifying multiple types for a parameter, return, or property.
+
+Exmple:
+function foo(int|float $number): int|float {
+    return $number * 2;
+}
+
+3)Named Arguments:
+Allows passing arguments to a function based on the parameter name, improving readability.
+
+function createUser($name, $age, $gender) {
+    // ...
+}
+createUser(age: 30, name: 'John', gender: 'male');
+
+4)Attributes (Annotations):
+
+Introduces native syntax for metadata
+
+#[ExampleAttribute]
+class Example {
+    // ...
+}
+
+5)Match Expression:
+Provides a more powerful and concise alternative to the switch statement.
+
+$result = match($status) {
+    'active' => 'Active',
+    'inactive' => 'Inactive',
+    default => 'Unknown',
+};
+
+6)Constructor Property Promotion:
+
+Simplifies class property definitions and assignments.
+
+class Point {
+    public function __construct(
+        public float $x,
+        public float $y,
+    ) {}
+}
+
+7)Nullsafe Operator:
+
+Allows safe navigation through object chains
+
+$country = $session?->user?->getAddress()?->country;
+
+8)Weak Maps:
+Provides a way to store references to objects without preventing their garbage collection.
+
+$weakMap = new WeakMap();
+$obj = new stdClass();
+$weakMap[$obj] = 'value';
+___________________________________________________________PHP_8.1Features_start_____________________________
+
+1)Enums:
+Provides a way to define a set of possible values for a variable.
+
+enum Status {
+    case Active;
+    case Inactive;
+}
+
+2)Readonly Properties:
+
+Ensures properties cannot be modified after initialization.
+
+class User {
+    public readonly string $name;
+    public function __construct(string $name) {
+        $this->name = $name;
+    }
+}
+
+3)Fibers:
+
+Introduces a way to manage code execution flow, enabling coroutines and simplifying asynchronous programming.
+
+$fiber = new Fiber(function() {
+    echo 'Fiber started';
+    Fiber::suspend();
+    echo 'Fiber resumed';
+});
+$fiber->start();
+echo 'Main';
+$fiber->resume();
+
+
+4)Array Unpacking with String Keys:
+
+Allows unpacking arrays with string keys.
+
+Exmple:
+
+$array1 = ["a" => 1];
+$array2 = ["b" => 2, "c" => 3];
+$result = ["d" => 4, ...$array1, ...$array2];
+
+5)Intersection Types:
+
+Allows specifying multiple types that a value must satisfy.
+
+function foo(A&B $value) {
+    // ...
+}
+
+
+___________________________________________________________PHP_8.1Features_END______________________________
+
+PHP 8.2 Features
+
+1)Read-only Classes:
+Makes all properties of a class readonly.
+
+readonly class Post {
+    public function __construct(
+        public string $title,
+        public string $content,
+    ) {}
+}
+9
+2)Disjunctive Normal Form (DNF) Types:
+Allows using complex logical operations for type declarations.
+
+function foo((A&B)|C $value) {
+    // ...
+}
+
+3)New true, false, and null Types:
+Allows specifying true, false, and null as standalone types.
+
+function isTrue(true $flag): void {
+    // ...
+}
+
+4)Deprecation of Dynamic Properties:
+
+#[AllowDynamicProperties]
+class Example {
+    // ...
+}
+
+5)Constants in Traits:
+trait MyTrait {
+    public const CONSTANT = 'value';
+}
+
+6)Standalone Types:
+Introduces standalone types like null, false, and true for function parameters and return types.
+___________________________________________________________________________END_________________
+
+Sure! Fibers in PHP are a powerful feature introduced in PHP 8.1 
+that allow developers to manage the execution flow of their code, 
+enabling coroutines and simplifying asynchronous programming.
+ They provide a way to pause and resume code execution at specific points, 
+ which can be particularly useful for tasks that require waiting, 
+ such as I/O operations, without blocking the main execution thread.
+
+
+What are Fibers?
+
+Fibers are similar to lightweight threads, but they are managed entirely within the PHP engine and are not reliant on the underlying operating system's threading capabilities. They allow you to yield execution from a running context and resume it later, making it easier to handle asynchronous tasks in a synchronous style.
+
+$fiber = new Fiber(function(): void {
+    echo "Fiber started\n";
+    $value = Fiber::suspend('Fiber paused');
+    echo "Fiber resumed with value: $value\n";
+});
+
+echo "Starting fiber\n";
+$value = $fiber->start();
+echo "Main program: $value\n";
+$fiber->resume('Resuming fiber');
+echo "Main program ends\n";
+
+
+output:
+
+Starting fiber
+Fiber started
+Main program: Fiber paused
+Fiber resumed with value: Resuming fiber
+Main program ends
+
+Key Concepts of Fibers
+
+1)Creating a Fiber:
+A Fiber is created by instantiating the Fiber class with a callable (usually an anonymous function).
+
+$fiber = new Fiber(function() {
+    // Fiber code
+});
+
+2)Starting a Fiber:
+You start a Fiber using the start() method, which begins execution of the Fiber’s callable.
+$fiber->start();
+
+3)Suspending a Fiber:
+
+Within the Fiber, you can suspend execution using Fiber::suspend(). This method can optionally return a value to the calling context.
+
+$value = Fiber::suspend('Optional return value');
+
+
+4)Resuming a Fiber:
+
+After suspension, you can resume execution using the resume() method, optionally passing a value back into the Fiber’s context.
+
+$fiber->resume('Value passed back to Fiber');
+
+
+5)Fiber Lifecycle:
+
+A Fiber has several states: started, suspended, running, and terminated. You can check the state of a Fiber using methods like isStarted(), isSuspended(), isRunning(), and isTerminated().
+
+1)Asynchronous I/O:
+
+Fibers can help manage I/O operations (e.g., file reading, network requests) without blocking the entire script, enabling other tasks to proceed concurrently.
+
+function asyncRead($filename) {
+    $fiber = new Fiber(function() use ($filename) {
+        $content = file_get_contents($filename);
+        Fiber::suspend($content);
+    });
+
+    $fiber->start();
+    return $fiber;
+}
+
+$fiber = asyncRead('example.txt');
+// Do other work here while waiting for the fiber to complete
+$content = $fiber->resume();
+echo $content;
+
+
+2)Concurrency in Web Applications:
+
+Fibers can be used to handle multiple concurrent requests or tasks in a web application, such as handling multiple API calls simultaneously.
+
+
+3)Task Scheduling:
+
+They can be used to build custom task schedulers, where tasks can be paused and resumed based on specific conditions.
+
+
+Example: Using Fibers with Promises
+
+
+Fibers can also be used in combination with promises to manage asynchronous code more intuitively:
+
+
+
+class Promise {
+    private $fiber;
+    private $result;
+
+    public function __construct(callable $task) {
+        $this->fiber = new Fiber($task);
+    }
+
+    public function start() {
+        $this->result = $this->fiber->start();
+    }
+
+    public function getResult() {
+        return $this->fiber->resume();
+    }
+}
+
+// Example usage
+$promise = new Promise(function() {
+    echo "Task started\n";
+    $data = Fiber::suspend('Waiting for data');
+    echo "Received data: $data\n";
+});
+
+$promise->start();
+$result = $promise->getResult(); // Simulate async operation completing
+echo "Final result: $result\n";
+
+
+
+
+
+Fibers in PHP offer a powerful mechanism for managing asynchronous code execution in a more synchronous and readable manner. They are particularly beneficial for handling tasks that involve waiting, such as I/O operations, without blocking the main execution thread. This makes them an excellent tool for improving the performance and responsiveness of PHP applications.
+_________________________________________________________________________________________
+08-07-2024
+
+Abstract Classes
+
+Benefits of Using Abstract Classes
+
+1)Code Reusability: Abstract classes allow you to define common functionality that can be reused by multiple subclasses.
+
+2)Enforce Consistency: Abstract methods ensure that all subclasses implement certain methods, providing a consistent interface.
+
+3)Simplify Maintenance: Changes to common functionality can be made in the abstract class, reducing the need to update multiple subclasses.
+
+By using abstract classes in these scenarios, you can create a flexible and maintainable codebase that adheres to the principles of object-oriented programming.
+
+Exmple:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+
+// Abstract class
+abstract class Payment {
+    // Abstract method for processing payment
+    abstract public function processPayment($amount);
+
+    // Regular method for logging payment
+    public function logPayment($amount) {
+        echo "Logging payment of $" . $amount . "\n"."<br>";
+    }
+}
+
+class CreditCardPayment extends Payment {
+    public function processPayment($amount) {
+        echo "Processing credit card payment of $" . $amount . "\n"."<br>";
+    }
+}
+
+class PayPalPayment extends Payment {
+    public function processPayment($amount) {
+        echo "Processing PayPal payment of $" . $amount . "\n"."<br>";
+    }
+}
+
+class BankTransferPayment extends Payment {
+    public function processPayment($amount) {
+        echo "Processing bank transfer payment of $" . $amount . "\n"."<br>";
+    }
+}
+
+// Example usage
+$payment1 = new CreditCardPayment();
+$payment1->processPayment(100);
+$payment1->logPayment(100);
+
+$payment2 = new PayPalPayment();
+$payment2->processPayment(200);
+$payment2->logPayment(200);
+
+$payment3 = new BankTransferPayment();
+$payment3->processPayment(300);
+$payment3->logPayment(300);
+
+?>
+
+</body>
+</html>
+
+output:
+Processing credit card payment of $100
+Logging payment of $100
+Processing PayPal payment of $200
+Logging payment of $200
+Processing bank transfer payment of $300
+Logging payment of $300
+
+_____________________________________________________________________________________________________
+
+Interface
+
+2)Scenario 2: Logging System
+In a logging system, you might want to support different types of loggers (e.g., file logger, database logger, email logger). Each logger will implement the same set of methods but will log messages in different ways.
+
+Exmple:
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+
+interface LoggerInterface {
+    public function logInfo($message);
+    public function logError($message);
+
+}
+
+class FileLogger implements LoggerInterface {
+    public function logInfo($message) {
+        echo "Logging info to a file: " . $message . "\n"."<br>";
+    }
+
+    public function logError($message) {
+        echo "Logging error to a file: " . $message . "\n"."<br>";
+    }
+}
+
+class DatabaseLogger implements LoggerInterface {
+    public function logInfo($message) {
+        echo "Logging info to a database: " . $message . "\n"."<br>";
+    }
+
+    public function logError($message) {
+        echo "Logging error to a database: " . $message . "\n"."<br>";
+    }
+}
+
+class EmailLogger implements LoggerInterface {
+    public function logInfo($message) {
+        echo "Sending info via email: " . $message . "\n"."<br>";
+    }
+
+    public function logError($message) {
+        echo "Sending error via email: " . $message . "\n"."<br>";
+    }
+}
+
+//  We can store object instances of Array in name of $loggers
+$loggers = [
+    new FileLogger(),
+    new DatabaseLogger(),
+    new EmailLogger()
+];
+
+foreach ($loggers as $logger) {
+    $logger->logInfo("This is an info message."."<br>");
+    $logger->logError("This is an error message."."<br>");
+}
+
+?>
+ 
+</body>
+</html>
+
+
+OutPut:-
+
+Logging info to a file: This is an info message.
+
+Logging error to a file: This is an error message.
+
+Logging info to a database: This is an info message.
+
+Logging error to a database: This is an error message.
+
+Sending info via email: This is an info message.
+
+Sending error via email: This is an error message.
+______________________________________________________________________________________________________________
+
+*)Encapsulation 
+
+1)Bank Account Management
+
+In a banking application, you want to protect the internal state of bank accounts from being accessed or modified directly. Encapsulation ensures that balance changes can only be made through specific methods, thus maintaining data integrity.
+
+Exmple:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+
+class BankAccount {
+    private $accountNumber;
+    private $balance;
+
+    public function __construct($accountNumber, $initialBalance) {
+        $this->accountNumber = $accountNumber;
+        $this->balance = $initialBalance;
+    }
+
+    public function deposit($amount) {
+        if ($amount > 0) {
+            $this->balance += $amount;
+        }
+    }
+
+    public function withdraw($amount) {
+        if ($amount > 0 && $amount <= $this->balance) {
+            $this->balance -= $amount;
+        }
+    }
+
+    public function getBalance() {
+        return $this->balance;
+    }
+
+    public function getAccountNumber() {
+        return $this->accountNumber;
+    }
+}
+
+// Example usage
+$account = new BankAccount('123456789', 1000);
+$account->deposit(500);
+$account->withdraw(200);
+echo "Account Number: " . $account->getAccountNumber() . "\n"."<br>"; // Output: 123456789
+echo "Balance: $" . $account->getBalance() . "\n"."<br>"; // Output: 1300
+
+?>
+
+
+</body>
+</html>
+_______________________________________________________________________________________________
+PHP - What are Traits?
+
+In PHP, traits are a way to reuse code across multiple classes. Think of them as a set of methods that
+ you can include in multiple classes without having to duplicate the code.
+
+trait HelloWorld {
+    public function sayHello() {
+        echo "Hello, World!";
+    }
+}
+
+class MyClass {
+    use HelloWorld;
+}
+
+$obj = new MyClass();
+$obj->sayHello(); // Outputs: Hello, World!
+
+
+Traits help in avoiding code duplication and keeping your codebase clean and DRY (Don't Repeat Yourself).
+______________________________________________________________________________________________________
+final Class
+
+<?php
+
+final class Authenticator {
+    private $username;
+    private $password;
+
+    public function __construct($username, $password) {
+        $this->username = $username;
+        $this->password = $password;
+    }
+
+    public function authenticate() {
+        // Core authentication logic
+        if ($this->username == 'admin' && $this->password == 'password123') {
+            echo "User authenticated successfully.";
+        } else {
+            echo "Authentication failed.";
+        }
+    }
+}
+
+
+
+// Instantiate and use Authenticator
+$auth = new Authenticator('admin', 'password123');
+$auth->authenticate();  // Output: User authenticated successfully.
+
+?>
+Output:-
+
+User authenticated successfully.
+______________________________________________________________________________________________________________
+
+final Method
+
+
+
+<?php
+
+class User {
+	
+    protected $userId;
+
+    public function __construct($userId) {
+        $this->userId = $userId;
+    }
+
+    public final function getUserDetails() {
+        // Logic to fetch user details
+        echo "Fetching details for user ID: $this->userId.<br>";
+    }
+}
+
+class AdminUser extends User {
+    // No attempt to override getUserDetails
+    public function getAdminDetails() {
+        // Custom logic for admin details
+        echo "Fetching admin details for user ID: $this->userId.";
+    }
+	
+}
+
+// Instantiate and use User
+$user = new User(1);
+$user->getUserDetails();  // Output: Fetching details for user ID: 1.
+
+// Instantiate and use AdminUser
+$adminUser = new AdminUser(2);
+$adminUser->getAdminDetails();  // Output: Fetching admin details for user ID: 2.
+
+
+
+?>
+
+Output:
+Fetching details for user ID: 1.
+Fetching admin details for user ID: 2.
+______________________________________________________________________________________________________________
+polymorphism: Exmple:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+
+abstract class Employee {
+    protected $name;
+    protected $salary;
+
+    public function __construct($name, $salary) {
+        $this->name = $name;
+        $this->salary = $salary;
+    }
+
+    abstract public function calculateSalary();
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getSalary() {
+        return $this->salary;
+    }
+}
+
+class FullTimeEmployee extends Employee {
+    public function calculateSalary() {
+        return $this->salary / 12; // Monthly salary calculation
+    }	
+}
+
+class PartTimeEmployee extends Employee {
+    public function calculateSalary() {
+        return $this->salary * 0.2; // Part-time hourly rate calculation
+    }
+}
+
+class Contractor extends Employee {
+    public function calculateSalary() {
+        return $this->salary; // Contract-based payment calculation
+    }
+}
+
+// Example usage
+$employees = [
+    new FullTimeEmployee("Alice", 60000),
+    new PartTimeEmployee("Bob", 20),
+    new Contractor("Charlie", 3000)
+];
+
+foreach ($employees as $employee) {
+    echo "Employee: " . $employee->getName() . "\n"."<br>";
+    echo "Salary: $" . $employee->calculateSalary() . "\n"."<br>";
+}
+
+?>
+
+</body>
+</html>
+
+
+
+Output:
+
+Employee: Alice
+Salary: $5000
+Employee: Bob
+Salary: $4
+Employee: Charlie
+Salary: $3000
+______________________________________________________________________________________________________________
+
+1)Display Errors:
+
+You can turn on error reporting to display errors on the screen, which is useful for debugging during development.
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+
+2)Error Reporting Levels:
+You can set different levels of error reporting to control what types of errors are displayed.
+
+
+error_reporting(E_ALL); // Report all errors
+error_reporting(E_WARNING); // Report only warnings
+error_reporting(0); // Turn off all error reporting
+
+3)Creating a Custom Error Handler:
+
+You can define a custom function to handle errors.
+
+function customErrorHandler($errno, $errstr, $errfile, $errline) {
+    echo "Error: [$errno] $errstr - $errfile:$errline";
+}
+
+set_error_handler("customErrorHandler");
+
+function customErrorHandler($errno, $errstr, $errfile, $errline) {
+    echo "Error: [$errno] $errstr - $errfile:$errline";
+}
+
+set_error_handler("customErrorHandler");
+
+4)Triggering an Error:
+You can trigger an error manually using the trigger_error function.
+trigger_error("This is a custom error!", E_USER_WARNING);
+
+
+5)Using Try and Catch:
+
+
+try {
+    // Code that may throw an exception
+    if (!file_exists("example.txt")) {
+        throw new Exception("File not found");
+    }
+} catch (Exception $e) {
+    // Code to handle the exception
+    echo "Caught exception: " . $e->getMessage();
+}
+
+2)Creating Custom Exceptions:
+You can create your own exception classes by extending the Exception class.
+
+
+class MyException extends Exception {}
+
+try {
+    throw new MyException("Custom exception");
+} catch (MyException $e) {
+    echo "Caught custom exception: " . $e->getMessage();
+}
+
+1)Display Errors: Useful for development.
+2)Custom Error Handlers: Define how to handle errors.
+3)Exception Handling: Use try and catch blocks for error management.
+4)Error Logging: Record errors in a log file for later review.
+5)These methods help you manage errors effectively, making your PHP code more robust and easier to debug.
+
+1)1. Anonymous Functions and Closures
+Anonymous functions, also known as closures, allow the creation of functions without names. They are often used as callback functions or to encapsulate logic in a concise manner.
+
+// Anonymous function assigned to a variable
+$greet = function($name) {
+    return "Hello, $name";
+};
+
+echo $greet("World"); // Output: Hello, World
+
+// Using closure as a callback
+$numbers = [1, 2, 3, 4, 5];
+$squared = array_map(function($n) {
+    return $n * $n;
+}, $numbers);
+
+print_r($squared); // Output: [1, 4, 9, 16, 25]
+
+2)Arrow Functions (Introduced in PHP 7.4)
+Arrow functions provide a shorter syntax for anonymous functions and automatically bind the this keyword.
+
+$numbers = [1, 2, 3, 4, 5];
+$squared = array_map(fn($n) => $n * $n, $numbers);
+
+print_r($squared); // Output: [1, 4, 9, 16, 25]
+
+3)Type Declarations
+PHP allows type declarations for function parameters and return types, which helps in ensuring that the values are of the expected type.
+
+function add(int $a, int $b): int {
+    return $a + $b;
+}
+
+echo add(2, 3); // Output: 5
+// echo add("2", "3"); // TypeError: Argument 1 passed to add() must be of the type int, string given
+
+4)Variadic Functions
+Variadic functions allow a function to accept a variable number of arguments.
+
+function sum(...$numbers): int {
+    return array_sum($numbers);
+}
+
+echo sum(1, 2, 3, 4); // Output: 10
+
+5. Named Arguments (Introduced in PHP 8.0)
+Named arguments allow passing arguments to a function based on the parameter name, rather than the position.
+
+function greet($name, $greeting = "Hello") {
+    return "$greeting, $name";
+}
+
+echo greet(name: "Alice", greeting: "Hi"); // Output: Hi, Alice
+
+6. Union Types (Introduced in PHP 8.0)
+
+Union types allow a parameter or return type to accept multiple types.
+
+function foo(int|float $number): int|float {
+    return $number * 2;
+}
+
+echo foo(2); // Output: 4
+echo foo(2.5); // Output: 5
+
+
+7. Attributes (Introduced in PHP 8.0)
+Attributes provide a way to add metadata to functions, classes, and properties.
+
+#[MyCustomAttribute]
+function myFunction() {
+    // Function logic
+}
+
+8. First-class Callable Syntax (Introduced in PHP 8.1)
+
+First-class callable syntax allows referencing a function in a more concise way.
+
+class MyClass {
+    public static function myMethod() {
+        echo "Hello, World!";
+    }
+}
+
+$callable = MyClass::myMethod(...);
+$callable(); // Output: Hello, World!
+
+
+
+
+
+
+
+
+
+LP-2025-Q1-ServiceNow-Employee-Growth-CS-1
+
+2025 Q1 ServiceNow CS + Intent_HR 6.2 
+
+
+
+
+I would like information, tips and offers about Solutions for Businesses and Organisations and other Microsoft products and services. Privacy Statement.
+
+
+
+
+
+How do I create role management system in CI4 explain step by step ?
+
+
+
+
+AdminController
+
+look  I have LoginController and adminController 
+
+I wrote logic  why is not found url 
+
+
+and routes my belwo this code  
+
+
+$routes->group('admin', ['filter' => 'rolecheck:admin'], function($routes) {
+    $routes->get('dashboard', 'AdminController::index');
+});
+
+$routes->group('editor', ['filter' => 'rolecheck:admin,editor'], function($routes) {
+    $routes->get('posts', 'EditorController::index');
+});
+
+which file should I set this Ci4
+
+$config['base_url'] = 'http://localhost:8080/htdocs/my-ci4-app/';
+
+
+when I hit below 
+
+http://localhost:8080/admin/dashboard
+
+
+they should be  belwo this url why
+
+http://localhost:8080/htdocs/my-ci4-app/index.php/login
+
+
+
+
+
+
+
+
+
