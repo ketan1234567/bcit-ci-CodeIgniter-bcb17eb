@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /bcit-ci-CodeIgniter-bcb17eb/
+
+    # If the requested file or directory does NOT exist
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Redirect all requests to index.php
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
