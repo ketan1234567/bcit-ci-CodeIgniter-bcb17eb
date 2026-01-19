@@ -304,3 +304,33 @@ It uses CodeIgniter’s form helper.
 When the form is submitted, the data will be sent to:
 👉 your-site-url/auth
 
+
+
+____________________________________________________________________________________________________________________________
+
+if you have to add site url first you have to add autoload.php file 
+
+inside you have integraded code 
+
+$autoload['helper'] = array('url','form');
+
+
+         <a class="nav-link" href="<?= site_url('login/logout'); ?>">Logout</a>
+
+
+____________________________________________________________________________________________________________________________
+
+
+<?= ... ?>
+
+
+This is short PHP echo syntax.
+
+Same as writing:
+
+<?php echo ...; ?>
+
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><?= html_escape($username); ?></a>
+
+________________________________________________________________________________________________________________________________
+
